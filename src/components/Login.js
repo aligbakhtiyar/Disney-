@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Login = (props) => {
   return (
     <Container>
@@ -8,10 +7,12 @@ const Login = (props) => {
         <CTA>
           <CTALogoOne src="/images/cta-logo-one.svg" alt="" />
           <SignUp>Get All Up</SignUp>
-          <Description>Get Premier Access to Raya and the Last Dragon for an additional fee
+          <Description>
+            Get Premier Access to Raya and the Last Dragon for an additional fee
             with a Disney+ subscription. As of 03/26/21, the price of Disney+
-            and The Disney Bundle will increase by $1.</Description>
-        <CTALogoTwo src="/images/cta-logo-two.png" alt="" />
+            and The Disney Bundle will increase by $1.
+          </Description>
+          <CTALogoTwo src="/images/cta-logo-two.png" alt="" />
         </CTA>
         <BgImage />
       </Content>
@@ -76,7 +77,6 @@ const CTALogoOne = styled.img`
   justify-content: center;
 `;
 
-
 const SignUp = styled.a`
   font-weight: bold;
   color: #f9f9f9;
@@ -109,6 +109,5 @@ const CTALogoTwo = styled.img`
   vertical-align: bottom;
   width: 100%;
 `;
-
 
 export default Login;
