@@ -1,6 +1,32 @@
 import styled from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import {useNavigate} from 'react-router-dom'
+import {auth, provider} from '../firebase';
+import { selectUserName, selectUserEmail, selectUserPhoto, setUserLoginDetails } from "../features/user/userSlice";
 
 const Header = (props) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const username = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
+   const handleAuth = () => {
+    auth.signInWithPopup(provider).then((result) => {
+      setUser(result.user);
+    }).catch((error) => {
+      alert(error.message)
+    })
+   }
+
+   const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    )
+   }
+
   return (
     <Nav>
       <Logo>
@@ -37,7 +63,8 @@ const Header = (props) => {
           <span>Series</span>
         </a>
       </NavMenu>
-      <Login></Login>
+      <Login onClick={handleAuth
+      }>Login</Login>
     </Nav>
   );
 };
@@ -135,4 +162,19 @@ const NavMenu = styled.div`
   }
   `;
 
+
+const Login = styled.a`
+background-color : rgba(0,0,0,0.6);
+padding: 8px 16px;
+text-decoration: upparcase;
+letter-spacing: 1.5px;
+border:1px solid #f9f9f9;
+border-radius: 4px;
+transition: all 0.2s ease 0s;
+
+&: hover{
+  background-color: #f9f9f9;
+  color: #000;
+}
+`;
 export default Header;
