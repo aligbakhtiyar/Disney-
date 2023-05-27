@@ -83,7 +83,7 @@ const Carousel = styled(Slider)`
 const Wrap = styled.div`
   border-radius: 4px;
   cursor: pointer;
-  position: relative;
+  ${'' /* position: relative; */}
 
   a {
     border-radius: 4px;
