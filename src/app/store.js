@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from '../features/user/userSlice'
-
+import movieReducer from '../features/user/movie/movieSlice'
 // const store = require('../store/app')
 // state = store.default.getState()
 
@@ -17,6 +17,7 @@ import userReducer from '../features/user/userSlice'
 
 const reducer = {
     user: userReducer,
+    movie: movieReducer,
 };
 
 const store = configureStore({
