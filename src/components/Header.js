@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { auth, provider } from "../firebase";
 // import {
 //   selectUserName,
@@ -59,53 +59,54 @@ const Header = (props) => {
 
   return (
     <Nav>
-      <Logo>
-        <img src="images/logo.svg"></img>
-      </Logo>
+      <Link to="/">
+        <Logo>
+          <img src="images/logo.svg"></img>
+        </Logo>
+      </Link>
 
       {/* {!userName ? (
         <Login onClick={handleAuth}>Login</Login>
       ) : ( */}
-        <>
-          <NavMenu>
-            <a href="/home">
-              <img src="/images/home-icon.svg" alt="HOME" />
-              <span>Home</span>
-            </a>
+      <>
+        <NavMenu>
+          <a href="/">
+            <img src="/images/home-icon.svg" alt="HOME" />
+            <span>Home</span>
+          </a>
 
-            <a href="/home">
-              <img src="/images/search-icon.svg" alt="SEARCH" />
-              <span>Search</span>
-            </a>
+          <a href="/home">
+            <img src="/images/search-icon.svg" alt="SEARCH" />
+            <span>Search</span>
+          </a>
 
-            <a href="/home">
-              <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
-              <span>Watchlist</span>
-            </a>
+          <a href="/home">
+            <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
+            <span>Watchlist</span>
+          </a>
 
-            <a href="/home">
-              <img src="/images/home-icon.svg" alt="ORIGINALS" />
-              <span>Originals</span>
-            </a>
+          <a href="/home">
+            <img src="/images/home-icon.svg" alt="ORIGINALS" />
+            <span>Originals</span>
+          </a>
 
-            <a href="/home">
-              <img src="/images/home-icon.svg" alt="MOVIES" />
-              <span>Movies</span>
-            </a>
+          <a href="/home">
+            <img src="/images/home-icon.svg" alt="MOVIES" />
+            <span>Movies</span>
+          </a>
 
-            <a href="/home">
-              <img src="/images/home-icon.svg" alt="SERIES" />
-              <span>Series</span>
-            </a>
-          </NavMenu>
-          {/* <SignOut>
+          <a href="/home">
+            <img src="/images/home-icon.svg" alt="SERIES" />
+            <span>Series</span>
+          </a>
+        </NavMenu>
+        {/* <SignOut>
             <UserImg src={userPhoto} alt={userName} />
             <DropDown>
               <span onClick={handleAuth}>Sign out</span>
             </DropDown>
           </SignOut> */}
-        </>
-      
+      </>
     </Nav>
   );
 };
